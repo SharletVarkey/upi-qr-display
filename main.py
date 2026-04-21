@@ -49,13 +49,13 @@ def bitmap_QR(matrix):
 def show_qr(amount):
     """Generate and display a UPI QR code for the given amount."""
     # Build UPI deep link
-    upi_link = (
-        f"upi://pay?pa=yash8hajare@oksbi"
-        f"&pn=Yash%20Hajare"
-        f"&am={amount}"
-        f"&cu=INR"
-        f"&aid=uGICAgICtr4_LFQ"
-    )
+upi_link = (
+    f"upi://pay?pa=yxxxxxxxx@oksbi"   #  Replace with your UPI ID (e.g. name@bank)
+    f"&pn=Yxxxx%20xxxxx"             #  Payee name (use %20 instead of spaces)
+    f"&am={amount}"                  #  Amount (comes from user input)
+    f"&cu=INR"                       #  Currency (keep INR for India)
+    f"&aid=uGICAgICtr4_LFQ"          #  Optional: App/merchant ID (can keep or remove)
+)
 
     # Generate QR code
     qr = adafruit_miniqr.QRCode(qr_type=7, error_correct=adafruit_miniqr.L)
